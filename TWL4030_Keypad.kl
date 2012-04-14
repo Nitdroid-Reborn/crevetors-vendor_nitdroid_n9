@@ -27,8 +27,8 @@ key 103   DPAD_UP           WAKE_DROPPED
 key 63    HOME              WAKE
 key 105   DPAD_LEFT         WAKE_DROPPED
 key 106   DPAD_RIGHT        WAKE_DROPPED
-key 65    VOLUME_UP
-key 66    VOLUME_DOWN
+key 115   VOLUME_UP
+key 114   VOLUME_DOWN
 key 148	  DPAD_CENTER
 key 149	  SEARCH
 key 202   EXPLORER
