@@ -3,6 +3,10 @@ on early-init
     # IPv6 support
     insmod /system/lib/modules/current/ipv6.ko
 
+    # DM/Crypt
+    insmod /system/lib/modules/current/dm-mod.ko
+    insmod /system/lib/modules/current/dm-crypt.ko
+
     # DSP
     insmod /system/lib/modules/current/mailbox.ko
     insmod /system/lib/modules/current/mailbox_mach.ko
@@ -33,6 +37,15 @@ on early-init
     insmod /system/lib/modules/current/keychord.ko
     insmod /system/lib/modules/current/twl4030-pwrbutton.ko
     insmod /system/lib/modules/current/twl4030_keypad.ko
+
+    # IOMMU and Camera
+    insmod /system/lib/modules/current/iommu.ko
+    insmod /system/lib/modules/current/iommu2.ko
+    insmod /system/lib/modules/current/iovmm.ko
+    insmod /system/lib/modules/current/omap3-iommu.ko
+    insmod /system/lib/modules/current/smiapp-power.ko
+    insmod /system/lib/modules/current/smiapp.ko
+    insmod /system/lib/modules/current/omap3-isp.ko
 
 on init
     write /sys/module/omapfb/parameters/android_mode 1
@@ -113,7 +126,7 @@ service dsme /system/bin/fakedsme
     class main
     disabled
 
-service harmount /system/bin/logwrapper /system/etc/harmount.sh
+service harmount /system/bin/sh /system/etc/harmount.sh
     class main
     oneshot
 
